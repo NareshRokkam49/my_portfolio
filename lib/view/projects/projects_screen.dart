@@ -73,6 +73,8 @@ class ProjectsScreen extends StatelessWidget {
             return InkWell(
               onTap: () {
                 index==0?Get.toNamed(AppRoutes.elProjectProfileScreen):null;
+                                  showErrorMessage(context, "onprogress");
+
               },
               child: Card(
                 color: Color(0xffffffff),

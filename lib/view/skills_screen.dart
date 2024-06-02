@@ -23,7 +23,7 @@ class SkillsScreen extends StatelessWidget {
     "Communication","Teamwork","Critical thinking","Time Management","Leadership","Decision-making","Patience"
    ];
      final List<String> Other=[
-    "English","Hindi","Telugu","Odiya","Sambalpuri"
+    "English","Hindi","Telugu","Odiya"
    ];
 
   @override

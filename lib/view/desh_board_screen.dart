@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -129,8 +130,11 @@ class ClipPathStack extends StatefulWidget {
 }
 
 class _ClipPathStackState extends State<ClipPathStack> {
+
+  
   @override
   Widget build(BuildContext context) {
+   
     return Stack(
       clipBehavior: Clip.none,
       alignment: Alignment.bottomCenter,
@@ -165,6 +169,7 @@ class _ClipPathStackState extends State<ClipPathStack> {
               style: TextStyles.getSubTita16(textColor: cWhiteColor),
             ),
             vGap(10),
+
             CButton(
                 color: cWhiteColor,
                 width: getWidth(context) / 3,

@@ -73,7 +73,7 @@ class EducationScreen extends StatelessWidget {
                         style: TextStyles.getSubTita16(textColor: cClayColor),
                       ),
                       Text(
-                        "2019 - 2023",
+                        "2019 - 2022",
                         style: TextStyles.getSubTita16(textColor: cClayColor),
                       ),
                     ],
@@ -89,7 +89,7 @@ class EducationScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        " Balaji institute of technology and Science, Gunupur, Odisha",
+                        "Balaji institute of technology and Science, Gunupur, Odisha",
                         style: TextStyles.getSubTital20(textColor: cClayColor),
                       ),
                       Text(

@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -6,9 +7,16 @@ import 'package:myportfolio/routes/app_routes.dart';
 import 'package:sizer/sizer.dart';
 import 'constants/cColors.dart';
 import 'routes/app_pages.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
+ 
 
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
@@ -31,8 +39,9 @@ class MyPortfolioApp extends StatelessWidget {
           fontFamily: "Roboto",
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        initialRoute: AppRoutes.initial,
-        getPages: AppPages.routes,
+
+       initialRoute: AppRoutes.initial,
+       getPages: AppPages.routes,
       );
     });
   }

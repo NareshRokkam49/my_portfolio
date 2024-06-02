@@ -72,7 +72,7 @@ class ExprienceScreen extends StatelessWidget {
                       style: TextStyles.getSubTital20(textColor: cClayColor),
                     ),
                     Text(
-                      "Nov 2022 - Present",
+                      "Nov 2022 - Feb 2024",
                       style: TextStyles.getSubTita16(textColor: cClayColor),
                     ),
 

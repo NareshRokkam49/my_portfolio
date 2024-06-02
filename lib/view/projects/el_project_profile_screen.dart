@@ -42,7 +42,7 @@ class ElProjectProfileScreen extends StatelessWidget {
             
               
                 Text(
-                  "EL Attadance",
+                  "EL FRS",
                   style: TextStyles.getSubTital20(textColor: cBlackColor),
                 ),
                 Text(""),Text("")
