@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-const Color cPrimeryColor = Color(0XFFF37022);
+const Color cPrimeryColor = Color(0XFF41332A);
 const Color cGrayColor = Color(0XFF727272);
 const Color cBlackColor = Color(0XFF1E1E1E);
 const Color cBlueColor2 = Color(0XFF2F82FF);
@@ -31,10 +31,10 @@ const Color cBoarderColor = Color(0XFFE8E8E8);
 const Color cCirclerColor = Color(0XFF31C5F4);
 const Color cCardBoarderColor = Color(0XFFC5C6CC);
 const Color cBlackColor2 = Color(0XFF141414);
-const Color cTxtColor = Color(0xffE64646);
 const Color cTaBBgColor = Color(0xffEFF0F2);
 const Color cSuccessColor = Color(0xff117B3D);
 const Color cTagBgColor = Color(0xffE0E0E0);
 
 //
 const Color cClayColor = Color(0xff5B6752);
+const Color cClayColor2 = Color(0xff515151);

@@ -12,9 +12,10 @@ class ImageConstants {
   static String skillIconSvg = "assets/svgs/skils_icon.svg";
     static String arrowUpIconSvg = "assets/svgs/arrow_up.svg";
   static String arrowDownIconSvg = "assets/svgs/arrow_down.svg";
+  static String downloadIcon="assets/svgs/download_icon.svg";
+//download_icon.svg
 
-
-  //projects
+  //pngs
     static String proImagePng = "assets/pngs/pro_image.jpg";
     static String elAttandacePng = "assets/pngs/el_attandance.jpg";
     static String mombPng = "assets/pngs/momb.jpg";

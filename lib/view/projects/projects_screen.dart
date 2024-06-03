@@ -20,7 +20,7 @@ class ProjectsScreen extends StatelessWidget {
   final List projectnames = [
     "EL Attandance App",
     "PRO App",
-    "Mana Ooru Mana badi",
+    "Celkon Digitals",
     "PHR App"
   ];
   @override
@@ -66,15 +66,19 @@ class ProjectsScreen extends StatelessWidget {
   Widget _softSkillList() {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
+        padding: const EdgeInsets.only(left: 24, right: 24, bottom: 30),
         child: ListView.builder(
           itemCount: projectnames.length,
           itemBuilder: (context, index) {
             return InkWell(
               onTap: () {
-                index==0?Get.toNamed(AppRoutes.elProjectProfileScreen):null;
-                                  showErrorMessage(context, "onprogress");
-
+                index == 0
+                    ? Get.toNamed(AppRoutes.elProjectProfileScreen)
+                    :index == 1
+                        ? Get.toNamed(AppRoutes.proProjectScreen): index == 2
+                        ? Get.toNamed(AppRoutes.mombProjectScreen)
+                        : Get.toNamed(AppRoutes.phrProjectScreen);
+                ;
               },
               child: Card(
                 color: Color(0xffffffff),
@@ -93,8 +97,8 @@ class ProjectsScreen extends StatelessWidget {
                             child: Text(
                               projectnames[index],
                               textAlign: TextAlign.center,
-                              style:
-                                  TextStyles.getSubTital20(textColor: cClayColor),
+                              style: TextStyles.getSubTital20(
+                                  textColor: cClayColor),
                             ),
                           ),
                           Icon(
@@ -155,7 +159,7 @@ class _ClipPathStackState extends State<ClipPathStack> {
                   vGap(10),
                   Text(
                     "Flutter Developer",
-                    style: TextStyles.getSubTita16(textColor: cPrimeryColor),
+                    style: TextStyles.getSubTita16(textColor: cWhiteColor),
                   ),
                   vGap(10),
                 ],

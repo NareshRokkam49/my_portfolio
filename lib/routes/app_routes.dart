@@ -10,5 +10,8 @@ class AppRoutes {
    static const String skillsScreen = "/skillsScreen";
       static const String projectsScreen = "/projectsScreen";
       static const String elProjectProfileScreen = "/elProjectProfileScreen";
+      static const String mombProjectScreen = "/mombProjectScreen";
+      static const String proProjectScreen = "/proProjectScreen";
+      static const String phrProjectScreen = "/phrProjectScreen";
 
 }

@@ -22,7 +22,7 @@ class TextStyles {
       Color? textColor,
       String? fontFamily}) {
     return getBaseStyle(
-        fontSize ?? 24, fontWeight ?? FontWeight.w700, textColor ?? cBlackColor2);
+        fontSize ?? 24, fontWeight ?? FontWeight.w700, textColor ?? cGrayColor);
   }
 
   static getSubTita16(
@@ -85,7 +85,7 @@ class TextStyles {
     Color? textColor,
   }) {
     return getBaseStyle(
-        fontSize ?? 28, fontWeight ?? FontWeight.w600, textColor ?? cBlackColor2);
+        fontSize ?? 28, fontWeight ?? FontWeight.w600, textColor ?? cGrayColor);
   }
 
   static getHeadline36({
@@ -94,7 +94,7 @@ class TextStyles {
     Color? textColor,
   }) {
     return getBaseStyle(fontSize ?? 36, fontWeight ?? FontWeight.w700,
-        textColor ?? Colors.blue);
+        textColor ?? cGrayColor);
   }
 
   static getHeadline32({
@@ -103,7 +103,7 @@ class TextStyles {
     Color? textColor,
   }) {
     return getBaseStyle(fontSize ?? 32, fontWeight ?? FontWeight.w600,
-        textColor ?? cBlackColor);
+        textColor ?? cGrayColor);
   }
 
   static getHeadline48({
