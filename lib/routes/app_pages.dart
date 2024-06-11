@@ -9,6 +9,7 @@ import 'package:myportfolio/view/projects/project_info/pro_info_screen.dart';
 import 'package:myportfolio/view/skills_screen.dart';
 import 'package:myportfolio/view/spash_screen.dart';
 
+import '../view/profile_screen.dart';
 import '../view/projects/project_info/el_project_profile_screen.dart';
 import '../view/projects/project_info/phr_info_screen.dart';
 import '../view/projects/projects_screen.dart';
@@ -28,6 +29,7 @@ GetPage(name: AppRoutes.elProjectProfileScreen, page: () => ElProjectProfileScre
 GetPage(name: AppRoutes.mombProjectScreen, page: () => MombProjectScreen()),
 GetPage(name: AppRoutes.proProjectScreen, page: () => ProProjectScreen()),
 GetPage(name: AppRoutes.phrProjectScreen, page: () => PhrProjectScreen()),
+GetPage(name: AppRoutes.profileScreen, page: () => ProfileScreen()),
 
   ];
 }

@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:myportfolio/components/cbuttons.dart';
@@ -78,144 +80,15 @@ class PhrProjectScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 vGap(10),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(12.0),
-                  child: Image.asset(
-                    ImageConstants.phrPng,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                vGap(10),
-                vGap(10),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      color: cWhiteColor,
-                      borderRadius: BorderRadius.circular(12)),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Project Overview",
-                        style:
-                            TextStyles.getSubTital24(textColor: cPrimeryColor),
-                      ),
-                      ListView.builder(
-                        itemCount: elData.length,
-                        shrinkWrap: true,
-                        primary: false,
-                        itemBuilder: (context, index) {
-                          return Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              vGap(10),
-                              Text(
-                                elData[index],
-                                style: TextStyles.getSubTital20(
-                                    textColor: cPrimeryColor),
-                              ),
-                              vGap(10),
-                              Text(productDetailsList[index],
-                                  style: TextStyles.getSubTital20(
-                                      fontSize: 15, textColor: cClayColor2))
-                            ],
-                          );
-                        },
-                      ),
-                    ],
-                  ),
-                ),
+                _profile(),
                 vGap(20),
-                Container(
-                    width: getWidth(context),
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        color: cWhiteColor,
-                        borderRadius: BorderRadius.circular(12)),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Project Duration",
-                          style: TextStyles.getSubTital24(
-                              textColor: cPrimeryColor),
-                        ),
-                        vGap(10),
-                        Text(
-                          "5 Months",
-                          style: TextStyles.getSubTita15(
-                              fontSize: 17, textColor: cClayColor2),
-                        ),
-                      ],
-                    )),
+                _projectOverview(),
                 vGap(20),
+                _projectDuration(context),
                 vGap(20),
-                Container(
-                    width: getWidth(context),
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        color: cWhiteColor,
-                        borderRadius: BorderRadius.circular(12)),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Tools Used",
-                          style: TextStyles.getSubTital24(
-                              textColor: cPrimeryColor),
-                        ),
-                        vGap(10),
-                        Text(
-                          "Flutter, Dart, Firebase,Php,Abdm apis",
-                          style: TextStyles.getSubTita15(
-                              fontSize: 17, textColor: cClayColor2),
-                        ),
-                      ],
-                    )),
+                _toolUsed(context),
                 vGap(20),
-                Container(
-                    width: getWidth(context),
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        color: cWhiteColor,
-                        borderRadius: BorderRadius.circular(12)),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Available In",
-                          style: TextStyles.getSubTital24(
-                              textColor: cPrimeryColor),
-                        ),
-                        vGap(10),
-                        ListTile(
-                          leading: Text(
-                            "Play Store",
-                            style: TextStyles.getSubTital20(
-                                textColor: cClayColor2),
-                          ),
-                          trailing: CButton(
-                              color: Colors.transparent,
-                              onPressed: () {},
-                              text: SvgPicture.asset(
-                                  ImageConstants.downloadIcon)),
-                        ),
-                        ListTile(
-                          leading: Text(
-                            "App Store",
-                            style: TextStyles.getSubTital20(
-                                textColor: cClayColor2),
-                          ),
-                          trailing: CButton(
-                              color: Colors.transparent,
-                              onPressed: () {
-                                showErrorMessage(context, "onprograss");
-                              },
-                              text: SvgPicture.asset(
-                                  ImageConstants.downloadIcon)),
-                        ),
-                      ],
-                    )),
+                _avalableInfo(context),
                 vGap(20)
               ],
             ),
@@ -223,5 +96,139 @@ class PhrProjectScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _profile() {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(12.0),
+      child: Image.asset(
+        ImageConstants.phrPng,
+        fit: BoxFit.cover,
+      ),
+    );
+  }
+
+  Widget _projectOverview() {
+    return Container(
+      padding: EdgeInsets.all(10),
+      decoration: BoxDecoration(
+          color: cWhiteColor, borderRadius: BorderRadius.circular(12)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Project Overview",
+            style: TextStyles.getSubTital24(textColor: cPrimeryColor),
+          ),
+          ListView.builder(
+            itemCount: elData.length,
+            shrinkWrap: true,
+            primary: false,
+            itemBuilder: (context, index) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  vGap(10),
+                  Text(
+                    elData[index],
+                    style: TextStyles.getSubTital20(textColor: cPrimeryColor),
+                  ),
+                  vGap(10),
+                  Text(productDetailsList[index],
+                      style: TextStyles.getSubTital20(
+                          fontSize: 15, textColor: cClayColor2))
+                ],
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _projectDuration(BuildContext context) {
+    return Container(
+        width: getWidth(context),
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+            color: cWhiteColor, borderRadius: BorderRadius.circular(12)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Project Duration",
+              style: TextStyles.getSubTital24(textColor: cPrimeryColor),
+            ),
+            vGap(10),
+            Text(
+              "5 Months",
+              style:
+                  TextStyles.getSubTita15(fontSize: 17, textColor: cClayColor2),
+            ),
+          ],
+        ));
+  }
+
+  Widget _toolUsed(BuildContext context) {
+    return Container(
+        width: getWidth(context),
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+            color: cWhiteColor, borderRadius: BorderRadius.circular(12)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Tools Used",
+              style: TextStyles.getSubTital24(textColor: cPrimeryColor),
+            ),
+            vGap(10),
+            Text(
+              "Flutter, Dart, Firebase,Php,Abdm apis",
+              style:
+                  TextStyles.getSubTita15(fontSize: 17, textColor: cClayColor2),
+            ),
+          ],
+        ));
+  }
+
+  Widget _avalableInfo(BuildContext context) {
+    return Container(
+        width: getWidth(context),
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+            color: cWhiteColor, borderRadius: BorderRadius.circular(12)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Available In",
+              style: TextStyles.getSubTital24(textColor: cPrimeryColor),
+            ),
+            vGap(10),
+            ListTile(
+              leading: Text(
+                "Play Store",
+                style: TextStyles.getSubTital20(textColor: cClayColor2),
+              ),
+              trailing: CButton(
+                  color: Colors.transparent,
+                  onPressed: () {},
+                  text: SvgPicture.asset(ImageConstants.downloadIcon)),
+            ),
+            ListTile(
+              leading: Text(
+                "App Store",
+                style: TextStyles.getSubTital20(textColor: cClayColor2),
+              ),
+              trailing: CButton(
+                  color: Colors.transparent,
+                  onPressed: () {
+                    showErrorMessage(context, "onprograss");
+                  },
+                  text: SvgPicture.asset(ImageConstants.downloadIcon)),
+            ),
+          ],
+        ));
   }
 }

@@ -43,15 +43,16 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
+      getValidation();
     super.initState();
-  getValidation();
+
     
   }
     getValidation() async {
 
   
     Timer(Duration(seconds: 3), () {
-      Get.offAllNamed(AppRoutes.dashBoardScreen
+      Get.offAllNamed(AppRoutes.profileScreen
           );
     });
   }

@@ -145,10 +145,12 @@ class _ClipPathStackState extends State<ClipPathStack> {
         children: [
           Row(
             children: [
-              CircleAvatar(
-                radius: 40,
-                backgroundImage: AssetImage(ImageConstants.profileWtoBgPng),
-              ),
+             CircleAvatar(
+  radius: 40,
+ backgroundImage: AssetImage(ImageConstants.profileWtoBgPng,),
+ 
+),
+
               hGap(15),
               Column(
                 children: [

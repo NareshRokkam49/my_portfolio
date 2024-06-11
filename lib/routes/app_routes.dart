@@ -13,5 +13,6 @@ class AppRoutes {
       static const String mombProjectScreen = "/mombProjectScreen";
       static const String proProjectScreen = "/proProjectScreen";
       static const String phrProjectScreen = "/phrProjectScreen";
+      static const String profileScreen = "/profileScreen";
 
 }

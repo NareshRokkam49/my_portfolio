@@ -9,15 +9,11 @@ import '../constants/image_constants.dart';
 import '../resourses/text_styles.dart';
 import '../utils/display_utils.dart';
 
-class AboutMeScreen extends StatefulWidget {
+class AboutMeScreen extends StatelessWidget {
   AboutMeScreen({super.key});
 
-  @override
-  State<AboutMeScreen> createState() => _AboutMeScreenState();
-}
-
-class _AboutMeScreenState extends State<AboutMeScreen> {
   final ValueNotifier<bool> showFullBio = ValueNotifier(false);
+
   final ValueNotifier<bool> showFullHobbies = ValueNotifier(false);
 
   @override
@@ -82,7 +78,7 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
                           Text(
                             "Bio",
                             style:
-                                TextStyles.getSubTital20(textColor: cClayColor),
+                                TextStyles.getSubTital20(textColor: cBlackColor),
                           ),
                           Text(
                             showFullBio.value
@@ -103,12 +99,18 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
                                       : ImageConstants.arrowDownIconSvg,
                                   height: 15,
                                   colorFilter: ColorFilter.mode(
-                                      cPrimeryColor, BlendMode.srcIn),
+                                      showFullBio.value
+                                          ? cGrayColor
+                                          : cBlackColor,
+                                      BlendMode.srcIn),
                                 ),
                                 hGap(10),
                                 Text(
-                                  showFullBio.value ? "View less" : "View more",
-                                  style: TextStyle(color: cPrimeryColor),
+                                  showFullBio.value ? "See less" : "See more",
+                                  style: TextStyle(
+                                      color: showFullBio.value
+                                          ? cGrayColor
+                                          : cBlackColor),
                                 ),
                               ],
                             ),
@@ -134,7 +136,7 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
                           Text(
                             "Hobbies",
                             style:
-                                TextStyles.getSubTital20(textColor: cClayColor),
+                                TextStyles.getSubTital20(textColor: cBlackColor),
                           ),
                           Text(
                             showFullHobbies.value
@@ -155,14 +157,19 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
                                       : ImageConstants.arrowDownIconSvg,
                                   height: 15,
                                   colorFilter: ColorFilter.mode(
-                                      cPrimeryColor, BlendMode.srcIn),
+                                      showFullHobbies.value
+                                          ? cGrayColor
+                                          : cBlackColor, BlendMode.srcIn),
                                 ),
                                 hGap(10),
                                 Text(
                                   showFullHobbies.value
-                                      ? "View less"
-                                      : "View more",
-                                  style: TextStyle(color: cPrimeryColor),
+                                      ? "See less"
+                                      : "See more",
+                                  style: TextStyle(
+                                      color: showFullHobbies.value
+                                          ? cGrayColor
+                                          : cBlackColor),
                                 ),
                               ],
                             ),
@@ -256,7 +263,7 @@ class ClippeingClass extends CustomClipper<Path> {
     var path = Path();
     path.lineTo(0.0, size.height - 30);
     path.quadraticBezierTo(
-        size.width / 50, size.height, size.width / 2, size.height);
+        size.width / 50, size.height, size.width / 3, size.height);
     path.quadraticBezierTo(size.width - (size.width / 50), size.height,
         size.width, size.height - 30);
     path.lineTo(size.width, 0.0);

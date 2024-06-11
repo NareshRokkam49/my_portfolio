@@ -1,3 +1,4 @@
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +9,10 @@ import 'package:myportfolio/constants/image_constants.dart';
 import 'package:myportfolio/resourses/text_styles.dart';
 import 'package:myportfolio/routes/app_routes.dart';
 import 'package:myportfolio/utils/display_utils.dart';
+import 'package:myportfolio/view/pdf_view_screen.dart';
 import 'package:sizer/sizer.dart';
+import 'package:http/http.dart';
+
 
 class DashBoardScreen extends StatelessWidget {
   DashBoardScreen({super.key});
@@ -17,7 +21,8 @@ class DashBoardScreen extends StatelessWidget {
     'Experience',
     'Education',
     'Skills',
-    'Projects'
+    'Projects',
+    "Resume"
   ];
 
   final List<String> iconsList = [
@@ -26,6 +31,7 @@ class DashBoardScreen extends StatelessWidget {
     ImageConstants.educationIconSvg,
     ImageConstants.skillIconSvg,
     ImageConstants.projectIconSvg,
+    ImageConstants.resumeIcon
   ];
   @override
   Widget build(BuildContext context) {
@@ -97,9 +103,14 @@ class DashBoardScreen extends StatelessWidget {
                   case 3:
                     Get.toNamed(AppRoutes.skillsScreen);
                     break;
-
                   case 4:
                     Get.toNamed(AppRoutes.projectsScreen);
+                    break;
+
+                  case 5:
+        
+                   Get.to(() => PDFPreviewScreen());
+                    break;
                   default:
                 }
               },
@@ -115,14 +126,37 @@ class DashBoardScreen extends StatelessWidget {
                   Text(
                     actionList[index],
                     style: TextStyles.getSubTita16(textColor: cBlackColor),
-                  )
+                  ),
+                   
+                
                 ],
               ),
             ),
           );
         });
   }
+
+
 }
+  
+  downloadfile(String filepath, BuildContext context) async {
+    try {
+      var time = DateTime.now().microsecondsSinceEpoch;
+      var path = "/storage/emulated/0/Download/naresh-$time.pdf";
+      var file = File(path);
+      var res =
+          await get(Uri.parse(filepath)); // var responce=await http.get(url),
+
+      file.writeAsBytes(res.bodyBytes);
+      showSuccessMessage(context, "Pdf succussfully downloaded");
+    } catch (e) {
+      showErrorMessage(context, "Error occured");
+    }
+  }
+
+  
+      
+
 
 class ClipPathStack extends StatefulWidget {
   @override
@@ -130,11 +164,8 @@ class ClipPathStack extends StatefulWidget {
 }
 
 class _ClipPathStackState extends State<ClipPathStack> {
-
-  
   @override
   Widget build(BuildContext context) {
-   
     return Stack(
       clipBehavior: Clip.none,
       alignment: Alignment.bottomCenter,
@@ -169,7 +200,6 @@ class _ClipPathStackState extends State<ClipPathStack> {
               style: TextStyles.getSubTita16(textColor: cWhiteColor),
             ),
             vGap(10),
-
             CButton(
                 color: cWhiteColor,
                 width: getWidth(context) / 3,

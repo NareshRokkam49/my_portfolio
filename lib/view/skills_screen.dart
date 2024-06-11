@@ -66,7 +66,7 @@ class SkillsScreen extends StatelessWidget {
                  indicatorSize: TabBarIndicatorSize.tab,
                  indicatorColor: cRedColor,
                  unselectedLabelColor:
-                     cGrayColor, //cLightVoiletColor2
+                     cGrayColor,
              
                  indicator: BoxDecoration(
                      color: cPrimeryColor,

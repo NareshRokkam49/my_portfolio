@@ -39,9 +39,9 @@ class MyPortfolioApp extends StatelessWidget {
           fontFamily: "Roboto",
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-
-       initialRoute: AppRoutes.initial,
-       getPages: AppPages.routes,
+//home: MyApp(),
+      initialRoute: AppRoutes.initial,
+      getPages: AppPages.routes,
       );
     });
   }
